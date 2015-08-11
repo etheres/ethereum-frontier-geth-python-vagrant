@@ -75,6 +75,6 @@ Vagrant.configure(2) do |config|
       mkdir ~vagrant/test
       python mk_genesis_block.py --extradata 0xdedd99132abf351483b23b700363f52f05804fe161f87d41ff572a1fbd14b310 > ~vagrant/test/genesis.json
       chown vagrant:vagrant ~vagrant/test/genesis.json
-      echo "Next run geth --networkid 1984 --genesis ~vagrant/test/genesis.json --datadir ~vagrant/.ethereum_experiment console"
+      echo "Next run geth --networkid 12345 --genesis ~vagrant/test/genesis.json --datadir ~vagrant/.ethereum_experiment console"
  SHELL
 end
