@@ -70,5 +70,8 @@ Vagrant.configure(2) do |config|
       git clone https://github.com/ethereum/pyethapp
       cd pyethapp
       sudo python setup.py install
+      curl -O https://raw.githubusercontent.com/ethereum/genesis_block_generator/master/mk_genesis_block.py
+      python mk_genesis_block.py --extradata 0xdedd99132abf351483b23b700363f52f05804fe161f87d41ff572a1fbd14b310 > ~/test/genesis.json
+      echo "Next run geth --networkid 1984 --genesis ~/test/genesis.json --datadir ~/.ethereum_experiment console"
  SHELL
 end
