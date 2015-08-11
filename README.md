@@ -1,2 +1,5 @@
 # ethereum-frontier-geth-python-vagrant
-Ethereum frontier with Geth, python client installable through Vagrant
+Installs Ethereum frontier with Geth, python client installable through Vagrant
+
+## Prerequisites
+Install Vagrant and VirtualBox
