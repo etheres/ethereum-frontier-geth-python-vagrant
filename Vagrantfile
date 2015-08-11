@@ -72,8 +72,9 @@ Vagrant.configure(2) do |config|
       cd pyethapp
       sudo python setup.py install
       curl -O https://raw.githubusercontent.com/ethereum/genesis_block_generator/master/mk_genesis_block.py
-      mkdir ~/test
-      python mk_genesis_block.py --extradata 0xdedd99132abf351483b23b700363f52f05804fe161f87d41ff572a1fbd14b310 > ~/test/genesis.json
-      echo "Next run geth --networkid 1984 --genesis ~/test/genesis.json --datadir ~/.ethereum_experiment console"
+      mkdir ~vagrant/test
+      python mk_genesis_block.py --extradata 0xdedd99132abf351483b23b700363f52f05804fe161f87d41ff572a1fbd14b310 > ~vagrant/test/genesis.json
+      chown vagrant:vagrant ~vagrant/test/genesis.json
+      echo "Next run geth --networkid 1984 --genesis ~vagrant/test/genesis.json --datadir ~vagrant/.ethereum_experiment console"
  SHELL
 end
