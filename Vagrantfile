@@ -48,7 +48,7 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-   vb.memory = "2048"
+   vb.memory = "12000"
    vb.cpus = "4"
  end
   #
@@ -67,6 +67,7 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
  config.vm.provision "shell", inline: <<-SHELL
       echo "Y" | bash <(curl https://install-geth.ethereum.org -L)
+      echo "Y" | bash <(curl https://install-eth.ethereum.org -L)
       sudo apt-get install -y git python-pip python-dev libxml2-dev libxslt-dev libssl-dev
       git clone https://github.com/ethereum/pyethapp
       cd pyethapp
